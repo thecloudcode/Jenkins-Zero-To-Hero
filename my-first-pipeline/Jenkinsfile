@@ -4,10 +4,8 @@ pipeline {
   stages {
     stage('Run in Docker') {
       steps {
-        script {
-          bat 'docker pull node:16-alpine' // Fix: for windows
-          bat 'docker run --rm node:16-alpine node --version' // Fix: for windows
-        }
+        sh 'docker pull node:16-alpine' // Fix: again for windows
+        sh 'docker run --rm node:16-alpine node --version' // Fix: again for windows
       }
     }
   }
